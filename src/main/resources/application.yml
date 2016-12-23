@@ -1,0 +1,31 @@
+server:
+    port: 8080
+    address: 127.0.0.1
+    context-path: /wyp/
+
+spring:
+    http:
+        encoding.charset: UTF-8
+        encoding.enable: true
+        encoding.force: true
+    mvc:
+        view.prefix: /jsp/
+        view.suffix: .jsp
+    datasource:
+        url: jdbc:mysql://localhost:3306/spring_boot_hello?characterEncoding=utf-8
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        max-idle: 10
+        max-wait: 10000
+        min-idle: 5
+        initial-size: 5
+        validation-query: SELECT 1
+        test-on-borrow: false
+        test-while-idle: true
+        time-between-eviction-runs-millis: 18800
+        jdbc-interceptors: ConnectionState;SlowQueryReport(threshold=0)
+
+mybatis:
+    mapperLocations: classpath:sqlmap/*.xml
+    typeAliasesPackage: com.wyp.entity

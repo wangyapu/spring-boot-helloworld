@@ -8,9 +8,13 @@ spring:
         encoding.charset: UTF-8
         encoding.enable: true
         encoding.force: true
-    mvc:
-        view.prefix: /jsp/
-        view.suffix: .jsp
+    thymeleaf:
+          prefix: classpath:/templates/
+          suffix: .html
+          mode: HTML5
+          encoding: UTF-8
+          content-type: text/html
+          cache: false
     datasource:
         url: jdbc:mysql://localhost:3306/spring_boot_hello?characterEncoding=utf-8
         username: root
